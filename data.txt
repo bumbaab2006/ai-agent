@@ -1,0 +1,161 @@
+COMPANY NAME: Altan Steppe Digital Solutions JSC
+
+LEGAL FORM:
+Joint Stock Company (JSC)
+
+YEAR OF ESTABLISHMENT:
+2018
+
+HEADQUARTERS:
+Ulaanbaatar, Sukhbaatar District, Mongolia
+
+REGIONAL OFFICES:
+- Darkhan, Mongolia
+- Seoul, South Korea (Representative Office)
+- Berlin, Germany (Research Partnership Office)
+
+INDUSTRY:
+Artificial Intelligence, Enterprise Software, Data Infrastructure
+
+EMPLOYEE COUNT:
+146 full-time employees
+32 contract-based specialists
+
+COMPANY OVERVIEW:
+Altan Steppe Digital Solutions JSC is a technology-focused organization specializing in artificial intelligence systems, enterprise automation, and data-driven decision support platforms. The company primarily serves medium to large enterprises seeking to modernize internal workflows, customer service operations, and knowledge management processes using AI-powered agents.
+
+The company follows a modular AI architecture, allowing clients to adopt solutions incrementally without disrupting existing infrastructure.
+
+CORE BUSINESS DOMAINS:
+- Artificial Intelligence Systems
+- Conversational AI and Chatbots
+- AI Agents and Autonomous Workflows
+- Vector Databases and Semantic Search
+- Enterprise Knowledge Management
+- Data Analytics and Reporting
+
+VISION:
+To become a leading AI infrastructure provider in Central Asia, enabling organizations to leverage artificial intelligence responsibly, securely, and efficiently.
+
+MISSION:
+To design and deploy scalable AI systems that reduce operational complexity, improve decision accuracy, and enhance human productivity.
+
+CORE VALUES:
+- Technical Excellence
+- Ethical AI Usage
+- Transparency and Trust
+- Security by Design
+- Continuous Learning
+- Long-term Partnerships
+
+PRIMARY SERVICES:
+
+1. ENTERPRISE AI CHATBOTS
+The company develops AI-powered chatbots designed for internal employees and external customers. These chatbots are trained using proprietary documents, FAQs, internal policies, and historical support data. They support contextual conversations, follow-up questions, and multilingual responses.
+
+2. AI AGENT ORCHESTRATION
+Altan Steppe builds AI agents capable of executing multi-step tasks such as data retrieval, document summarization, report generation, and API-based system interactions. These agents can autonomously reason through workflows using predefined tools and constraints.
+
+3. VECTOR DATABASE IMPLEMENTATION
+The company implements vector search solutions using Pinecone and similar databases to enable semantic search across large document collections. Typical use cases include internal knowledge bases, legal document retrieval, and customer support archives.
+
+4. CUSTOM AI MODEL INTEGRATION
+Clients can integrate third-party AI models such as OpenAI, Hugging Face, or locally hosted models. The company ensures secure API usage, monitoring, and fallback mechanisms.
+
+5. WEB AND PLATFORM DEVELOPMENT
+Using Next.js, React, and Node.js, the company builds secure dashboards and interfaces for managing AI agents, monitoring usage, and analyzing performance metrics.
+
+TECHNOLOGY STACK:
+- Frontend: Next.js, React, Tailwind CSS
+- Backend: Node.js, Express, Fastify
+- AI Frameworks: LangChain, Custom Agent Framework
+- Embeddings: Hugging Face Granite Embeddings
+- Vector DB: Pinecone
+- Databases: PostgreSQL, Redis
+- Cloud: AWS, GCP (Hybrid)
+- Authentication: OAuth 2.0, JWT
+- Monitoring: Prometheus, Grafana
+
+DATA HANDLING POLICY:
+All client data is processed according to strict security standards. Sensitive information is encrypted both in transit and at rest. Access to internal systems is role-based and logged for auditing purposes.
+
+The company does not sell or share customer data with third parties.
+
+AI ETHICS POLICY:
+AI systems developed by the company adhere to ethical principles, including fairness, explainability, and accountability. The company avoids deploying AI systems that could cause harm, misinformation, or discrimination.
+
+EMPLOYEE TRAINING:
+Employees undergo mandatory training programs covering:
+- AI safety and ethics
+- Data protection regulations
+- Secure coding practices
+- Prompt engineering techniques
+- Vector search optimization
+
+CLIENT INDUSTRIES:
+- Banking and Financial Services
+- Insurance
+- Education and E-learning
+- Healthcare
+- Telecommunications
+- Government Agencies
+- E-commerce Platforms
+
+PROJECT LIFECYCLE:
+1. Requirements Analysis
+2. Data Collection and Cleaning
+3. Knowledge Base Structuring
+4. Embedding and Vector Indexing
+5. AI Agent Configuration
+6. Testing and Validation
+7. Deployment
+8. Continuous Monitoring and Improvement
+
+INTERNAL DEPARTMENTS:
+- AI Research and Development
+- Platform Engineering
+- Data Engineering
+- Product Management
+- Quality Assurance
+- Cybersecurity
+- Customer Success
+
+FREQUENTLY ASKED QUESTIONS:
+
+Q: What languages do your AI systems support?
+A: Mongolian and English by default, with additional languages available upon request.
+
+Q: How does the AI agent retrieve information?
+A: The agent uses semantic vector search over embedded documents stored in a vector database.
+
+Q: Can the AI agent access real-time systems?
+A: Yes, through secure APIs and predefined tool permissions.
+
+Q: How is data accuracy ensured?
+A: Through versioned knowledge bases, validation workflows, and human review processes.
+
+SECURITY MEASURES:
+- Network segmentation
+- API rate limiting
+- Continuous vulnerability scanning
+- Incident response plans
+- Regular penetration testing
+
+FUTURE ROADMAP:
+2025:
+- Voice-enabled AI agents
+- Multimodal document understanding
+- Advanced reasoning workflows
+
+2026:
+- Autonomous enterprise agents
+- Cross-system AI coordination
+- Industry-specific AI templates
+
+CONTACT INFORMATION:
+Email: info@altansteppe.digital
+Phone: +976-7012-3344
+Address: Sukhbaatar District, Ulaanbaatar, Mongolia
+
+DOCUMENT PURPOSE:
+This document is created for experimental AI agent development, embedding generation, and vector database indexing. The content is fictional and intended solely for testing and development purposes.
