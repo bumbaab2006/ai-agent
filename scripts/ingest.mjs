@@ -3,8 +3,6 @@ import { HuggingFaceInferenceEmbeddings } from "@langchain/community/embeddings/
 import { RecursiveCharacterTextSplitter } from "@langchain/textsplitters";
 import fs from "fs";
 import * as dotenv from "dotenv";
-import { createRequire } from "module";
-const require = createRequire(import.meta.url);
 
 dotenv.config({ path: ".env.local" });
 

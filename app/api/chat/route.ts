@@ -5,6 +5,10 @@ import { HuggingFaceInferenceEmbeddings } from "@langchain/community/embeddings/
 import { ChatGoogleGenerativeAI } from "@langchain/google-genai";
 import { NextResponse } from "next/server";
 
+type MatchMetadata = {
+  text?: string;
+};
+
 export async function POST(req: Request) {
   try {
     const { question } = await req.json();
@@ -36,7 +40,10 @@ export async function POST(req: Request) {
 
     // Metadata-аас текст авахдаа төрлийг нь зааж өгөх (TypeScript)
     const context = queryResponse.matches
-      .map((match: any) => match.metadata?.text || "")
+      .map((match) => {
+        const metadata = match.metadata as MatchMetadata | undefined;
+        return metadata?.text || "";
+      })
       .join("\n\n---\n\n"); // Контекстүүдийг зааглаж өгөх нь AI-д ойлгоход амар
 
     const prompt = `
@@ -60,8 +67,10 @@ ${question}
     const result = await llm.invoke(prompt);
 
     return NextResponse.json({ answer: result.content });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Chat API Error Details:", error);
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    const message =
+      error instanceof Error ? error.message : "Тодорхойгүй алдаа гарлаа";
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }
