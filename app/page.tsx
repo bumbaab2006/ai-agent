@@ -63,224 +63,183 @@ export default function ChatPage() {
   };
 
   return (
-    <main className="min-h-screen overflow-hidden bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.82),_transparent_32%),linear-gradient(135deg,#f4efe4_0%,#d9e5ec_46%,#f7f7f2_100%)] text-slate-900">
-      <div className="mx-auto flex min-h-screen w-full max-w-7xl flex-col gap-6 px-4 py-6 lg:flex-row lg:px-6 lg:py-8">
-        <section className="relative overflow-hidden rounded-[32px] border border-white/60 bg-[#15313b] p-6 text-white shadow-[0_30px_90px_rgba(21,49,59,0.28)] lg:w-[38%] lg:p-8">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.18),_transparent_28%),radial-gradient(circle_at_bottom_left,_rgba(255,184,107,0.22),_transparent_24%)]" />
-          <div className="relative flex h-full flex-col">
-            <div className="mb-6 flex items-center justify-between">
-              <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-white/80">
-                Pinecone Demo
-              </span>
-              <span className="rounded-full bg-emerald-300/18 px-3 py-1 text-xs font-medium text-emerald-100">
-                Knowledge Retrieval Active
-              </span>
-            </div>
+    <main className="min-h-screen bg-[#f5f5f7] text-[#1d1d1f]">
+      <div className="mx-auto flex min-h-screen w-full max-w-6xl flex-col px-5 py-8 sm:px-8 lg:px-10 lg:py-12">
+        <header className="mx-auto w-full max-w-3xl text-center">
+          <p className="text-sm font-medium text-[#6e6e73]">Pinecone Demo</p>
+          <h1 className="mt-3 text-4xl font-semibold tracking-[-0.04em] text-[#1d1d1f] sm:text-5xl">
+            AI knowledge assistant
+          </h1>
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-[#6e6e73] sm:text-lg">
+            Company knowledge base-с утгад суурилж хариулт гаргах энгийн,
+            төвлөрсөн туршилтын чат.
+          </p>
+        </header>
 
-            <div className="max-w-md space-y-5">
-              <p className="text-sm uppercase tracking-[0.28em] text-[#f3d1a2]">
-                Experimental AI Agent
-              </p>
-              <h1 className="text-4xl font-semibold leading-tight lg:text-5xl">
-                Company knowledge-г хэрэглэгчид ойлгомжтой хүргэх туршилтын чат.
-              </h1>
-              <p className="max-w-xl text-sm leading-7 text-slate-200/88 lg:text-base">
-                Энэ demo нь асуултыг embedding болгож, Pinecone дахь knowledge
-                base-с хамгийн ойр контекстуудыг олж, дараа нь Gemini-ээр
-                тайлбарласан хариулт буцааж байна.
-              </p>
-            </div>
-
-            <div className="mt-8 grid gap-3 sm:grid-cols-3 lg:mt-10 lg:grid-cols-1">
-              <div className="rounded-2xl border border-white/12 bg-white/8 p-4 backdrop-blur-sm">
-                <p className="text-xs uppercase tracking-[0.2em] text-white/60">
-                  Data Source
-                </p>
-                <p className="mt-2 text-sm text-white/90">
-                  Structured company profile, services, policy, FAQ
-                </p>
-              </div>
-              <div className="rounded-2xl border border-white/12 bg-white/8 p-4 backdrop-blur-sm">
-                <p className="text-xs uppercase tracking-[0.2em] text-white/60">
-                  Retrieval Flow
-                </p>
-                <p className="mt-2 text-sm text-white/90">
-                  Question - Embedding - Pinecone search - Context - Gemini
-                </p>
-              </div>
-              <div className="rounded-2xl border border-white/12 bg-white/8 p-4 backdrop-blur-sm">
-                <p className="text-xs uppercase tracking-[0.2em] text-white/60">
-                  Use Case
-                </p>
-                <p className="mt-2 text-sm text-white/90">
-                  Customer inquiry, internal helpdesk, enterprise knowledge demo
+        <section className="mt-10 grid flex-1 gap-6 lg:grid-cols-[260px_minmax(0,1fr)]">
+          <aside className="space-y-6">
+            <div className="rounded-[28px] border border-black/6 bg-white p-6 shadow-[0_10px_30px_rgba(0,0,0,0.04)]">
+              <h2 className="text-sm font-semibold text-[#1d1d1f]">
+                About this demo
+              </h2>
+              <div className="mt-4 space-y-4 text-sm leading-6 text-[#6e6e73]">
+                <p>Pinecone retrieval, Granite embeddings, Gemini response.</p>
+                <p>
+                  Хэрэглэгчийн асуултад хамгийн ойр мэдлэгийн хэсгийг олж
+                  тайлбарласан хариулт өгнө.
                 </p>
               </div>
             </div>
 
-            <div className="mt-8 rounded-[28px] border border-white/12 bg-black/10 p-5 backdrop-blur-sm lg:mt-auto">
-              <p className="text-xs uppercase tracking-[0.22em] text-white/60">
-                Suggested Questions
-              </p>
-              <div className="mt-4 flex flex-wrap gap-2">
+            <div className="rounded-[28px] border border-black/6 bg-white p-6 shadow-[0_10px_30px_rgba(0,0,0,0.04)]">
+              <h2 className="text-sm font-semibold text-[#1d1d1f]">
+                Suggested prompts
+              </h2>
+              <div className="mt-4 flex flex-col gap-2">
                 {quickPrompts.map((prompt) => (
                   <button
                     key={prompt}
                     type="button"
                     onClick={() => setInput(prompt)}
-                    className="rounded-full border border-white/14 bg-white/10 px-4 py-2 text-left text-sm text-white transition hover:bg-white/16"
+                    className="rounded-2xl border border-black/8 bg-[#fbfbfd] px-4 py-3 text-left text-sm leading-6 text-[#3a3a3c] transition hover:bg-white hover:text-[#1d1d1f]"
                   >
                     {prompt}
                   </button>
                 ))}
               </div>
             </div>
-          </div>
-        </section>
+          </aside>
 
-        <section className="flex min-h-[70vh] flex-1 flex-col rounded-[32px] border border-slate-200/70 bg-white/72 shadow-[0_24px_70px_rgba(26,43,54,0.12)] backdrop-blur-xl">
-          <div className="border-b border-slate-200/70 px-5 py-5 sm:px-6">
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">
-                  AI Conversation
-                </p>
-                <h2 className="mt-2 text-2xl font-semibold text-slate-900">
-                  Semantic search chat
-                </h2>
-                <p className="mt-1 text-sm leading-6 text-slate-600">
-                  Асуулт асуухад system нь knowledge base-оос холбоотой хэсгүүдийг
-                  татаад хариулж байна.
-                </p>
-              </div>
-              <div className="flex gap-2 text-xs text-slate-600">
-                <span className="rounded-full bg-slate-900 px-3 py-1.5 font-medium text-white">
-                  Pinecone
-                </span>
-                <span className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 font-medium">
-                  Granite Embeddings
-                </span>
-                <span className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 font-medium">
-                  Gemini
-                </span>
+          <section className="flex min-h-[68vh] flex-col rounded-[32px] border border-black/6 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.05)]">
+            <div className="border-b border-black/6 px-6 py-5 sm:px-8">
+              <div className="flex items-center justify-between gap-4">
+                <div>
+                  <p className="text-sm font-medium text-[#6e6e73]">
+                    Semantic search chat
+                  </p>
+                  <p className="mt-1 text-sm text-[#8e8e93]">
+                    Knowledge base-с retrieval хийж хариулж байна
+                  </p>
+                </div>
+                <div className="rounded-full border border-black/6 bg-[#fbfbfd] px-4 py-2 text-xs font-medium text-[#6e6e73]">
+                  Live demo
+                </div>
               </div>
             </div>
-          </div>
 
-          <div className="flex-1 overflow-y-auto px-4 py-5 sm:px-6">
-            {messages.length === 0 ? (
-              <div className="flex h-full min-h-[360px] flex-col items-center justify-center rounded-[28px] border border-dashed border-slate-300/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(243,246,248,0.92))] px-6 py-10 text-center">
-                <div className="rounded-full bg-[#15313b] px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.24em] text-[#f3d1a2]">
-                  Ready to query
+            <div className="flex-1 overflow-y-auto px-5 py-6 sm:px-8">
+              {messages.length === 0 ? (
+                <div className="flex h-full min-h-[360px] flex-col items-center justify-center text-center">
+                  <div className="max-w-2xl">
+                    <h3 className="text-3xl font-semibold tracking-[-0.03em] text-[#1d1d1f]">
+                      Ask a question
+                    </h3>
+                    <p className="mt-4 text-base leading-7 text-[#6e6e73]">
+                      Энэ интерфэйс нь minimalist байдлаар зөвхөн асуулт,
+                      retrieval, хариулт гэсэн үндсэн урсгалд төвлөрч байна.
+                    </p>
+                  </div>
+
+                  <div className="mt-8 flex flex-wrap justify-center gap-3">
+                    {quickPrompts.map((prompt) => (
+                      <button
+                        key={prompt}
+                        type="button"
+                        onClick={() => void sendQuestion(prompt)}
+                        className="rounded-full border border-black/8 bg-white px-4 py-2.5 text-sm text-[#3a3a3c] transition hover:border-black/12 hover:text-[#1d1d1f]"
+                      >
+                        {prompt}
+                      </button>
+                    ))}
+                  </div>
                 </div>
-                <h3 className="mt-5 max-w-lg text-3xl font-semibold leading-tight text-slate-900">
-                  Компанийн мэдлэгийн сангаас утгад суурилж хариулт авна.
-                </h3>
-                <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-600">
-                  Доорх prompt-уудаас сонгох эсвэл өөрийн асуултыг бич. Энэ UI
-                  нь Pinecone retrieval туршилтыг илүү ойлгомжтой харуулах demo
-                  interface юм.
-                </p>
-                <div className="mt-6 flex flex-wrap justify-center gap-3">
-                  {quickPrompts.map((prompt) => (
-                    <button
-                      key={prompt}
-                      type="button"
-                      onClick={() => void sendQuestion(prompt)}
-                      className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
-                    >
-                      {prompt}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            ) : (
-              <div className="space-y-4">
-                {messages.map((msg, index) => (
-                  <div
-                    key={`${msg.role}-${index}`}
-                    className={`flex ${
-                      msg.role === "user" ? "justify-end" : "justify-start"
-                    }`}
-                  >
+              ) : (
+                <div className="space-y-6">
+                  {messages.map((msg, index) => (
                     <div
-                      className={`max-w-[90%] rounded-[24px] px-4 py-3 shadow-sm sm:max-w-[82%] ${
-                        msg.role === "user"
-                          ? "bg-[#15313b] text-white"
-                          : "border border-slate-200 bg-white text-slate-800"
+                      key={`${msg.role}-${index}`}
+                      className={`flex ${
+                        msg.role === "user" ? "justify-end" : "justify-start"
                       }`}
                     >
-                      <p
-                        className={`mb-2 text-[11px] font-semibold uppercase tracking-[0.22em] ${
+                      <div
+                        className={`max-w-[92%] rounded-[24px] px-5 py-4 sm:max-w-[80%] ${
                           msg.role === "user"
-                            ? "text-[#f3d1a2]"
-                            : "text-slate-400"
+                            ? "bg-[#1d1d1f] text-white"
+                            : "border border-black/6 bg-[#fbfbfd] text-[#1d1d1f]"
                         }`}
                       >
-                        {msg.role === "user" ? "You" : "AI Agent"}
-                      </p>
-                      <p className="whitespace-pre-wrap text-sm leading-7">
-                        {msg.text}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-                {loading && (
-                  <div className="flex justify-start">
-                    <div className="rounded-[24px] border border-slate-200 bg-white px-4 py-3 text-sm text-slate-500 shadow-sm">
-                      <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-400">
-                        AI Agent
-                      </p>
-                      <div className="flex items-center gap-2">
-                        <span className="h-2 w-2 animate-bounce rounded-full bg-slate-400 [animation-delay:-0.2s]" />
-                        <span className="h-2 w-2 animate-bounce rounded-full bg-slate-400 [animation-delay:-0.1s]" />
-                        <span className="h-2 w-2 animate-bounce rounded-full bg-slate-400" />
-                        <span className="ml-2">Хариулт боловсруулж байна...</span>
+                        <p
+                          className={`text-[11px] font-medium uppercase tracking-[0.22em] ${
+                            msg.role === "user"
+                              ? "text-white/55"
+                              : "text-[#8e8e93]"
+                          }`}
+                        >
+                          {msg.role === "user" ? "You" : "Assistant"}
+                        </p>
+                        <p className="mt-2 whitespace-pre-wrap text-[15px] leading-7">
+                          {msg.text}
+                        </p>
                       </div>
                     </div>
-                  </div>
-                )}
-                <div ref={messagesEndRef} />
-              </div>
-            )}
-          </div>
-
-          <div className="border-t border-slate-200/70 bg-white/80 px-4 py-4 backdrop-blur-sm sm:px-6">
-            <div className="rounded-[28px] border border-slate-200 bg-slate-50/80 p-3 shadow-inner shadow-white/60">
-              <div className="flex flex-col gap-3 sm:flex-row sm:items-end">
-                <div className="flex-1">
-                  <label
-                    htmlFor="chat-input"
-                    className="mb-2 block text-xs font-semibold uppercase tracking-[0.22em] text-slate-500"
-                  >
-                    Your question
-                  </label>
-                  <textarea
-                    id="chat-input"
-                    rows={3}
-                    className="w-full resize-none rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm leading-6 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-slate-900"
-                    placeholder="Жишээ нь: Танай AI agent ямар салбаруудад ашиглагддаг вэ?"
-                    value={input}
-                    onChange={(e) => setInput(e.target.value)}
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter" && !e.shiftKey) {
-                        e.preventDefault();
-                        void handleSend();
-                      }
-                    }}
-                  />
+                  ))}
+                  {loading && (
+                    <div className="flex justify-start">
+                      <div className="rounded-[24px] border border-black/6 bg-[#fbfbfd] px-5 py-4 text-sm text-[#6e6e73]">
+                        <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[#8e8e93]">
+                          Assistant
+                        </p>
+                        <div className="mt-2 flex items-center gap-2">
+                          <span className="h-2 w-2 animate-pulse rounded-full bg-[#b0b0b5]" />
+                          <span className="h-2 w-2 animate-pulse rounded-full bg-[#b0b0b5] [animation-delay:120ms]" />
+                          <span className="h-2 w-2 animate-pulse rounded-full bg-[#b0b0b5] [animation-delay:240ms]" />
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                  <div ref={messagesEndRef} />
                 </div>
-                <button
-                  type="button"
-                  onClick={() => void handleSend()}
-                  disabled={loading || !input.trim()}
-                  className="inline-flex h-12 items-center justify-center rounded-2xl bg-[#15313b] px-6 text-sm font-semibold text-white transition hover:bg-[#0f252d] disabled:cursor-not-allowed disabled:bg-slate-300"
-                >
-                  {loading ? "Түр хүлээнэ үү" : "Илгээх"}
-                </button>
+              )}
+            </div>
+
+            <div className="border-t border-black/6 px-5 py-5 sm:px-8">
+              <div className="rounded-[28px] border border-black/8 bg-[#fbfbfd] p-3">
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-end">
+                  <div className="flex-1">
+                    <label
+                      htmlFor="chat-input"
+                      className="mb-2 block text-xs font-medium uppercase tracking-[0.22em] text-[#8e8e93]"
+                    >
+                      Message
+                    </label>
+                    <textarea
+                      id="chat-input"
+                      rows={3}
+                      className="w-full resize-none rounded-[20px] border border-black/6 bg-white px-4 py-3 text-[15px] leading-6 text-[#1d1d1f] outline-none transition placeholder:text-[#a1a1a6] focus:border-black/18"
+                      placeholder="Асуултаа энд бичнэ үү..."
+                      value={input}
+                      onChange={(e) => setInput(e.target.value)}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" && !e.shiftKey) {
+                          e.preventDefault();
+                          void handleSend();
+                        }
+                      }}
+                    />
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => void handleSend()}
+                    disabled={loading || !input.trim()}
+                    className="inline-flex h-12 items-center justify-center rounded-full bg-[#1d1d1f] px-6 text-sm font-medium text-white transition hover:bg-black disabled:cursor-not-allowed disabled:bg-[#d2d2d7]"
+                  >
+                    {loading ? "Thinking..." : "Send"}
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
+          </section>
         </section>
       </div>
     </main>
