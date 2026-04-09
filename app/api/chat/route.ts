@@ -34,18 +34,16 @@ export async function POST(req: Request) {
     const queryEmbedding = await embeddings.embedQuery(question);
     const queryResponse = await index.query({
       vector: queryEmbedding,
-      topK: 6, // 3 байсныг 6 болгож байна. Ингэснээр илүү их мэдээлэл шүүрдэнэ.
+      topK: 6,
       includeMetadata: true,
     });
 
-    // Metadata-аас текст авахдаа төрлийг нь зааж өгөх (TypeScript)
     const context = queryResponse.matches
       .map((match) => {
         const metadata = match.metadata as MatchMetadata | undefined;
         return metadata?.text || "";
       })
-      .join("\n\n---\n\n"); // Контекстүүдийг зааглаж өгөх нь AI-д ойлгоход амар
-
+      .join("\n\n---\n\n"); 
     const prompt = `
 Чи бол тусгай мэдээллийн санд суурилсан ухаалаг AI туслах. 
 Доорх "КОНТЕКСТ" хэсэгт өгөгдсөн мэдээллийг ашиглан хэрэглэгчийн асуултад дэлгэрэнгүй, үнэн зөв хариулна уу.
