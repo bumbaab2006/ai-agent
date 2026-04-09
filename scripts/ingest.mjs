@@ -11,9 +11,8 @@ async function run() {
   const index = pc.index(
     "assistant-ai-agent",
     "https://assistant-ai-agent-6dadvox.svc.aped-4627-b74a.pinecone.io"
-  ); // Индексийн Dimension-ийг моделийнхтой тааруулаарай!
+  ); 
 
-  // HuggingFace-ийн Granite модель ашиглах тохиргоо
   const embeddings = new HuggingFaceInferenceEmbeddings({
     model: "ibm-granite/granite-embedding-small-english-r2",
     apiKey: process.env.HF_token,
